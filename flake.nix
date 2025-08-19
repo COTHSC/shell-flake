@@ -30,6 +30,8 @@
                 ];
 
                 interactiveShellInit = ''
+                    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+
                     set -gx PATH $HOME/.ghcup/bin $PATH
                     set fish_color_command green
                     set fish_color_param normal
