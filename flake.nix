@@ -30,6 +30,7 @@
                 ];
 
                 interactiveShellInit = ''
+                    set -gx PATH $HOME/.ghcup/bin $PATH
                     set fish_color_command green
                     set fish_color_param normal
                     set fish_color_error red
