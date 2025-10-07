@@ -89,6 +89,20 @@
                 keyMode = "vi";              # Vi-style keys
                     mouse = true;                # Enable mouse support
 
+
+                plugins = with pkgs.tmuxPlugins; [
+                    sensible
+                    resurrect
+                    {
+                        plugin = continuum;
+                        extraConfig = ''
+                set -g @continuum-restore 'on'
+                set -g @continuum-save-interval '5'
+                        '';
+                    }
+                ];
+
+
 # Custom key bindings and settings
                     extraConfig = ''
 # Vi copypaste mode
