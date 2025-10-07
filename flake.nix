@@ -50,6 +50,15 @@
                     set fish_cursor_replace_one underscore
                     set fish_cursor_visual block
 
+                            # Detach from tmux instead of exiting
+                    function exit
+                        if set -q TMUX
+                            tmux detach
+                        else
+                            builtin exit $argv
+                        end
+                    end
+
                     function fish_mode_prompt
                     switch $fish_bind_mode
                         case default
@@ -74,6 +83,9 @@
                             bind -M insert \cb backward-char
                             bind -M insert \ce end-of-line
                             bind -M insert \ca beginning-of-line
+
+               
+
 
                             '';
             };
@@ -153,6 +165,9 @@
 # Enable true colors
                     set -g default-terminal "tmux-256color"
                     set -ag terminal-overrides ",xterm-256color:RGB"
+
+
+
                     '';
 
 
@@ -181,7 +196,6 @@
                         tmux
                 ];
                 shellHook = ''
-                    nix run .#test.activationPackage
                     exec fish;
                 '';
             };
