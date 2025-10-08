@@ -12,13 +12,24 @@
 
     outputs = { self, home-manager, nixpkgs }: {
         homeManagerModules.default = {pkgs, ...}: {
+            home.packages = with pkgs; [
+                bat
+                eza
+                zoxide
+                ripgrep
+                fd
+                fzf
+            ];
             programs.fzf.enable = true;
             programs.fish = {
                 enable = true;
 
                 shellAliases = {
-                    ll = "ls -l";
-                    la = "ls -la";
+                    cat = "bat";
+                    ls = "eza";
+                    cd = "z";
+                    ll = "eza -l";
+                    la = "eza -la";
                     wow = "echo WTaF";
                 };
 
@@ -173,31 +184,5 @@
 
             };
         };
-
-        packages.x86_64-linux.test = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-            modules = [ self.homeManagerModules.default {
-                home = {
-                    stateVersion = "24.05";
-                    username = "jcts";
-                    homeDirectory = "/home/jcts";
-                };
-            }
-            ];
-        };
-
-        devShells.x86_64-linux.default = 
-            let
-            pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        in
-            pkgs.mkShell {
-                packages = with pkgs; [
-                    fish
-                        tmux
-                ];
-                shellHook = ''
-                    exec fish;
-                '';
-            };
     };
 }
