@@ -13,6 +13,8 @@
     outputs = { self, home-manager, nixpkgs }: {
         homeManagerModules.default = {pkgs, ...}: {
             home.packages = with pkgs; [
+                starship
+                yazi
                 bat
                 eza
                 zoxide
