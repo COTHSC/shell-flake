@@ -20,6 +20,7 @@
                 ripgrep
                 fd
                 fzf
+                (nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" "Hack" ]; })
             ];
             programs.fzf.enable = true;
             programs.fish = {
