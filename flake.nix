@@ -21,6 +21,7 @@
                 fd
                 fzf
                 nerd-fonts.jetbrains-mono
+                nerd-fonts.symbols-only
             ];
             programs.fzf.enable = true;
             programs.fish = {
