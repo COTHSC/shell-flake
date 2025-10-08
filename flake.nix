@@ -17,7 +17,6 @@
                 yazi
                 bat
                 eza
-                zoxide
                 ripgrep
                 fd
                 fzf
@@ -29,7 +28,6 @@
                 shellAliases = {
                     cat = "bat";
                     ls = "eza";
-                    cd = "z";
                     ll = "eza -l";
                     la = "eza -la";
                     wow = "echo WTaF";
