@@ -20,6 +20,7 @@
                 ripgrep
                 fd
                 fzf
+                just
                 nerd-fonts.jetbrains-mono
                 nerd-fonts.fira-code
                 nerd-fonts.hack
