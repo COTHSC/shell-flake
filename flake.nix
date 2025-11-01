@@ -25,6 +25,17 @@
                 nerd-fonts.fira-code
                 nerd-fonts.hack
             ];
+
+            programs.atuin = {
+                enable = true;
+                settings = {
+                    auto_sync = true;
+                    sync_frequency = "5m";
+                    sync_address = "https://api.atuin.sh";
+                    search_mode = "fuzzy";
+                };
+            };
+
             programs.fzf.enable = true;
             programs.fish = {
                 enable = true;
@@ -50,7 +61,6 @@
                 '';
 
                 interactiveShellInit = ''
-
                     set -gx PATH $HOME/.ghcup/bin $PATH
                     set fish_color_command green
                     set fish_color_param normal
@@ -64,15 +74,6 @@
                     set fish_cursor_insert line
                     set fish_cursor_replace_one underscore
                     set fish_cursor_visual block
-
-                            # Detach from tmux instead of exiting
-                    function exit
-                        if set -q TMUX
-                            tmux detach
-                        else
-                            builtin exit $argv
-                        end
-                    end
 
                     function fish_mode_prompt
                     switch $fish_bind_mode
