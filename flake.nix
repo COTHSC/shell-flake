@@ -26,6 +26,12 @@
                 nerd-fonts.hack
             ];
 
+            programs.git = {
+                enable = true;
+                userName = "cothsc";
+                userEmail = "thierryscully.colomban@gmail.com";
+            };
+
             programs.atuin = {
                 enable = true;
                 settings = {
