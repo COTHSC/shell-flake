@@ -14,6 +14,7 @@
         homeManagerModules.default = {pkgs, ...}: {
             home.packages = with pkgs; [
                 starship
+                fuzzel
                 yazi
                 bat
                 eza
