@@ -15,6 +15,7 @@
             home.packages = with pkgs; [
                 starship
                 fuzzel
+                wl-clipboard
                 yazi
                 bat
                 eza
