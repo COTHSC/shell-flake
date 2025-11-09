@@ -1,5 +1,5 @@
 {
-    description = "Personal shell setup including tmux";
+    description = "all things shell";
 
     inputs = { 
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
