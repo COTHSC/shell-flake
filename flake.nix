@@ -37,8 +37,8 @@
 
             programs.git = {
                 enable = true;
-                userName = "cothsc";
-                userEmail = "thierryscully.colomban@gmail.com";
+                settings.user.name = "cothsc";
+                settings.user.email = "thierryscully.colomban@gmail.com";
             };
 
             services.cliphist.enable = true;
