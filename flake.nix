@@ -41,6 +41,9 @@
                 userEmail = "thierryscully.colomban@gmail.com";
             };
 
+            services.cliphist.enable = true;
+
+
             programs.atuin = {
                 enable = true;
                 settings = {
