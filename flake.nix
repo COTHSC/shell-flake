@@ -27,6 +27,7 @@
                 nerd-fonts.fira-code
                 nerd-fonts.hack
                 pass
+                tmuxifier
             ];
 
             programs.direnv = {
@@ -72,6 +73,10 @@
                     src = pkgs.fishPlugins.fzf-fish.src;
                 }
                 ];
+
+                shellInit = ''
+                        set -gx TMUXIFIER_LAYOUT_PATH "$HOME/.tmux-layouts"
+                '';
 
                 loginShellInit = ''
                     set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
