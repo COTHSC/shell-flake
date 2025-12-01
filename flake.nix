@@ -28,6 +28,7 @@
                 nerd-fonts.hack
                 pass
                 tmuxifier
+                bottom
             ];
 
             programs.direnv = {
